@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Book{
+    -String:    title
+    -String:    author
+    -int:       isbn
+    -boolean:   available
+}
+class User{
+    -String:   ID
+    -String:    name
+    -String:    email
+}
+class Loan{
+    -String:    ID
+    -User:  user
+    -Book:  book
+    -String:    dataDeEmprestimo
+    -String:    dataDeDevoluçao
+}
+User --> Loan
+Loan --> Book
+
+
+@enduml

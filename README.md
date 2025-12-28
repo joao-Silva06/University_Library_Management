@@ -1,2 +1,7 @@
 # University_Library_Management
-The goal is to simulate a real system, similar to those developed in a business context, evaluating technical skills, organization, and best development practices.
+
+### Objetivo
+O objetivo é **simular um sistema real**, semelhante aos desenvolvidos em um contexto empresarial, avaliando habilidades técnicas, organização do código e boas práticas de desenvolvimento.
+
+### Observação sobre Repositories
+As classes `Repository` não existem, pois o gerenciamento será feito utilizando **SQL**. Dessa forma, os Repositories são substituídos por uma **base de dados**.

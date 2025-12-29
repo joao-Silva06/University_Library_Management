@@ -6,7 +6,7 @@ import Repository.UserRepo;
 import java.util.Set;
 
 public class LoginController {
-    private String PASSWORD = "123@45-/";
+    private String PASSWORD = "12345";
     private String USERNAME = "admin";
     public LoginController() {
     }

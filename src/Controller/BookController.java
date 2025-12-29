@@ -1,8 +1,13 @@
 package Controller;
 
 import Domain.Book;
+import Repository.BookRepo;
 
 public class BookController {
+    private final BookRepo bookRepo;
+    public BookController(BookRepo bookRepo) {
+        this.bookRepo = bookRepo;
+    }
     public Book registerNewBook(String title, String author, int isbn) {
         if (title == null || title.length() == 0 || author == null || author.length() == 0) {
             System.out.println("Title or Author is null or empty");
@@ -14,5 +19,7 @@ public class BookController {
         }
         return null;
     }
-
+    public BookRepo getBookRepo() {
+        return bookRepo;
+    }
 }

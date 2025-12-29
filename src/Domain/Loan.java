@@ -71,12 +71,22 @@ public class Loan {
 
     @Override
     public String toString() {
-        return "Loan{" +
-                "loanId='" + loanId + '\'' +
-                ", user=" + user +
-                ", book=" + book +
-                ", loanDate='" + loanDate + '\'' +
-                ", returnDate='" + returnDate + '\'' +
-                '}';
+        return String.format(
+                """
+                📚 Loan Details
+                -------------------------
+                Loan ID     : %s
+                User        : %s
+                Book        : %s
+                Loan Date   : %s
+                Return Date : %s
+                """,
+                loanId,
+                user,
+                book,
+                loanDate,
+                returnDate
+        );
     }
+
 }

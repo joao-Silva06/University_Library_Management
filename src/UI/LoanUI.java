@@ -83,7 +83,7 @@ public class LoanUI implements Runnable {
     }
     public void viewAllLoanUI(){
         for(Loan loan : loanController.getLoanRepo().getLoans()){
-            loan.toString();
+            System.out.println(loan.toString());
             System.out.println("----------------");
         }
     }

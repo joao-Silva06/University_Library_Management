@@ -15,10 +15,13 @@ public class BookController {
             System.out.println("ISBN number is invalid");
         } else {
             Book livro = new Book(title,author,isbn,true);
+            System.out.println(livro);
+            bookRepo.addBook(livro);
             return livro;
         }
         return null;
     }
+
     public BookRepo getBookRepo() {
         return bookRepo;
     }

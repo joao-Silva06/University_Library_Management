@@ -49,12 +49,10 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book => " +
-                "  | " + title +
-                "  | " + author +
-                "  | " + available +
-                "  | " + isbn;
+        return String.format("LIVRO [ISBN: %s] | Título: %-20s | Autor: %-15s | Status: %s",
+                isbn, title, author, (available ? "Disponível" : "Emprestado"));
     }
+
 
     @Override
     public boolean equals(Object o) {

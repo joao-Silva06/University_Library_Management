@@ -102,7 +102,7 @@ public class UserUI implements Runnable {
 
     private void viewAllUsersUI() {
         for (User user : registUserController.getUserRepo().getAllUsers()) {
-            user.toString();
+            System.out.println(user.toString());
         }
     }
 

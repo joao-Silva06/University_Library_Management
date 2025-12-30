@@ -9,7 +9,7 @@ public class BookRepo {
     public BookRepo(List<Book> books) {
         this.books = books;
     }
-    public List<Book> getBooks() {
+    public List<Book> getAllBooks() {
         return books;
     }
     public void setBooks(List<Book> books) {
@@ -22,5 +22,27 @@ public class BookRepo {
             }
         }
         return null;
+    }
+    public Book getBookByISBN(int isbn) {
+        for (Book book : books) {
+            if(isbn == book.getIsbn()){
+                return book;
+            }
+        }
+        return null;
+    }
+    public Book getBookByAuthor(String author) {
+        for (Book book : books) {
+            if(author.equals(book.getAuthor())){
+                return book;
+            }
+        }
+        return null;
+    }
+    public void removeBook(int isbn) {
+        books.remove(getBookByISBN(isbn));
+    }
+    public void addBook(Book book) {
+        books.add(book);
     }
 }

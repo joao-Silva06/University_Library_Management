@@ -8,6 +8,7 @@ import Domain.Book;
 import Repository.BookRepo;
 import Repository.LoanRepo;
 import Repository.UserRepo;
+import UI.BookUI;
 import UI.LoanUI;
 import UI.Login;
 import UI.UserUI;
@@ -34,6 +35,7 @@ public class main {
         Login login = new Login(controller);
         LoanUI loanUI = new LoanUI(loanController, userRepo, bookController);
         UserUI userUI = new UserUI(registUserController);
+        BookUI bookUI = new BookUI(bookController);
 
 
         boolean running = true;
@@ -47,6 +49,7 @@ public class main {
             op = sc.nextInt();
             switch (op) {
                 case 1:
+                    bookUI.run();
                     break;
                 case 2:
                     loanUI.run();

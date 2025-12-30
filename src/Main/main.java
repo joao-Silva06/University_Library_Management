@@ -3,12 +3,14 @@ package Main;
 import Controller.BookController;
 import Controller.LoanController;
 import Controller.LoginController;
+import Controller.RegistUserController;
 import Domain.Book;
 import Repository.BookRepo;
 import Repository.LoanRepo;
 import Repository.UserRepo;
 import UI.LoanUI;
 import UI.Login;
+import UI.UserUI;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -19,14 +21,21 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //repos
         BookRepo bookRepo = new BookRepo(new ArrayList<>());
         UserRepo userRepo = new UserRepo(new HashSet<>());
         LoanRepo loanRepo = new LoanRepo(new ArrayList<>());
+        //controller
         LoginController controller = new LoginController();
         LoanController loanController = new LoanController(bookRepo, userRepo, loanRepo);
         BookController bookController = new BookController(bookRepo);
+        RegistUserController  registUserController = new RegistUserController(userRepo);
+        //ui
         Login login = new Login(controller);
         LoanUI loanUI = new LoanUI(loanController, userRepo, bookController);
+        UserUI userUI = new UserUI(registUserController);
+
+
         boolean running = true;
         int op = 0;
         login.run();
@@ -43,6 +52,7 @@ public class main {
                     loanUI.run();
                     break;
                 case 3:
+                    userUI.run();
                     break;
                 case 4:
                     System.out.println("Exiting...");

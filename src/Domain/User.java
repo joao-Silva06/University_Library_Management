@@ -7,6 +7,12 @@ public class User {
     private String name;
     private String email;
 
+    public User(String id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+
     public String getId() {
         return id;
     }
@@ -33,10 +39,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User => " + id  +
-                " | " + name  +
-                " | " + email  +
-                " | ";
+        return "👤 ID: " + id + " 🏷️ Nome: " + name + " 📧 Email: " + email;
     }
 
     @Override

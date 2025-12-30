@@ -36,5 +36,12 @@ public class UserRepo {
     public Set<User> getAllUsers(){
         return users;
     }
+    public void addUser(User user){
+        users.add(user);
+    }
+    public void removeUser(User user){
+        users.remove(user);
+    }
+
 
 }
